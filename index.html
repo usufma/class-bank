@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>class bank</title>
+</head>
+<body>
+<h1  style="color:blue;font-size:46px;"> To check Account balance go to console<h1>
+	<script>
+class BankAccount {
+  constructor(accountNumber, balance) {
+    this.accountNumber = accountNumber;
+    this.balance = balance;
+  }
+
+  deposit(amount) {
+    this.balance += amount;
+    console.log(`Deposited Rs:${amount}. New balance is Rs:${this.balance}`);
+  }
+
+  withdraw(amount) {
+    if (amount > this.balance) {
+      console.log("Insufficient balance");
+    } else {
+      this.balance -= amount;
+      console.log(`Withdrawn Rs:${amount}. New balance is Rs:${this.balance}`);
+    }
+  }
+}
+
+const account1 = new BankAccount("ACC001", 1000);
+const account2 = new BankAccount("ACC002", 5000);
+
+account1.deposit(500);
+account1.withdraw(200);
+
+account2.deposit(1000);
+account2.withdraw(600);
+
+	</script>
+</body>
+</html>
